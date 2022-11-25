@@ -6,9 +6,15 @@ using System.Threading.Tasks;
 
 namespace GenericsDemo
 {
-    internal class GenericsMethods
+    internal class GenericsMethods<T>
     {
-        public static void print<T>(T[] inputArray)
+        private T[] inputArray;
+
+        public GenericsMethods(T[] inputArray)
+        {
+            this.inputArray = inputArray;
+        }
+        public void print()
         {
             foreach(var i in inputArray)
             {

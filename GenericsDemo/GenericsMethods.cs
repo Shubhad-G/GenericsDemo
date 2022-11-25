@@ -8,30 +8,14 @@ namespace GenericsDemo
 {
     internal class GenericsMethods
     {
-        public static void printIntArray(int[] intArray)
+        public static void print<T>(T[] inputArray)
         {
-            foreach(int i in intArray)
+            foreach(var i in inputArray)
             {
                 Console.WriteLine(i);
             }
             Console.WriteLine("-------------\n");
         }
 
-        public static void printDoubleArray(double[] doubleArray)
-        {
-            foreach(double i in doubleArray)
-            {
-                System.Console.WriteLine(i);
-            }
-            Console.WriteLine("-------------\n");
-        }
-        public static void printCharArray(char[] charArray)
-        {
-            foreach(char i in charArray)
-            {
-                Console.WriteLine(i);
-            }
-            Console.WriteLine("-------------\n");
-        }
     }
 }

@@ -14,9 +14,9 @@ namespace GenericsDemo
             double[] doubleArray = { 1.2, 2.2, 3.2, 4.2 };
             char[] charArray = { 'a', 'b', 'c', 'd', 'e' };
 
-            GenericsMethods.printIntArray(intArray);
-            GenericsMethods.printDoubleArray(doubleArray);
-            GenericsMethods.printCharArray(charArray);
+            GenericsMethods.print<int>(intArray);
+            GenericsMethods.print<double>(doubleArray);
+            GenericsMethods.print<char>(charArray);
 
             Console.ReadLine();
             

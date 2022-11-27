@@ -22,17 +22,29 @@ namespace GenericsDemo
             //GenericsMethods.print<double>(doubleArray);
             //GenericsMethods.print<char>(charArray);//generic method implementation
 
-            int firstNumber, secondNumber, thirdNumber;
-            Console.WriteLine("enter the numbers");
-            Console.WriteLine("enter the first number");
-            firstNumber = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("enter the second number");
-            secondNumber = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("enter the third number");
-            thirdNumber = Convert.ToInt32(Console.ReadLine());
+            int firstintNumber, secondintNumber, thirdintNumber;
+            Console.WriteLine("enter the integer numbers");
+            Console.WriteLine("enter the first integer numbers");
+            firstintNumber = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("enter the second integer number");
+            secondintNumber = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("enter the third integer number");
+            thirdintNumber = Convert.ToInt32(Console.ReadLine());
 
-            int maxNumber=GenericsMaximum.integerMaximum(firstNumber, secondNumber, thirdNumber);
-            Console.WriteLine(maxNumber.ToString());
+            int maxNumber=GenericsMaximum.integerMaximum(firstintNumber, secondintNumber, thirdintNumber);
+            Console.WriteLine("maximum of entered numbers is :"+maxNumber.ToString());
+
+            double firstfloatNumber, secondintfloatNumber, thirdintfloatNumber;
+            Console.WriteLine("enter the floating point numbers");
+            Console.WriteLine("enter the first  number");
+            firstfloatNumber = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("enter the second  number");
+            secondintfloatNumber = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("enter the third  number");
+            thirdintfloatNumber = Convert.ToDouble(Console.ReadLine());
+
+            double maxfloatNumber = GenericsMaximum.doubleMaximum(firstfloatNumber, secondintfloatNumber, thirdintfloatNumber);
+            Console.WriteLine("maximum of entered numbers is :"+maxfloatNumber.ToString());
 
             Console.ReadLine();
             

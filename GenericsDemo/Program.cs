@@ -46,6 +46,18 @@ namespace GenericsDemo
             double maxfloatNumber = GenericsMaximum.doubleMaximum(firstfloatNumber, secondintfloatNumber, thirdintfloatNumber);
             Console.WriteLine("maximum of entered numbers is :"+maxfloatNumber.ToString());
 
+            string firstString, secondString, thirdString;
+            Console.WriteLine("enter the string values");
+            Console.WriteLine("enter the first string");
+            firstString = Console.ReadLine();
+            Console.WriteLine("enter the second string");
+            secondString = Console.ReadLine();
+            Console.WriteLine("enter the third string");
+            thirdString = Console.ReadLine();
+
+            string maxString = GenericsMaximum.stringMaximum(firstString, secondString, thirdString);
+            Console.WriteLine("maximum of entered string is :" + maxString);
+
             Console.ReadLine();
             
         }

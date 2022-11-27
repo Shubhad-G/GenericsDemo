@@ -6,91 +6,50 @@ using System.Threading.Tasks;
 
 namespace GenericsDemo
 {
-    internal class GenericsMaximum
+    internal class GenericsMaximum <T> where T : IComparable
     {
-        public static int integerMaximum(int firstNumber,int secondNumber,int thirdNumber)
-        {
-            if ((firstNumber.CompareTo(secondNumber) > 0) && (firstNumber.CompareTo(thirdNumber) > 0) ||
-                firstNumber.CompareTo(secondNumber) >= 0 && (firstNumber.CompareTo(thirdNumber) > 0) ||
-                firstNumber.CompareTo(secondNumber) > 0 && firstNumber.CompareTo(thirdNumber) >= 0)
-            {
-                return firstNumber;                                                                        /*here in first return compare to method returns 1 if first number is greater than both
-                                                                                                            second and third which is compared with 0 and since 1 is greater than 0 first number will be-
-                                                                                                             maximum or else if the first number is not greater then compare to will return -1 and
-                                                                                                             since -1 is less than 0 condition will become false and it will be same for other*/
-            }
-             
-            else if ((secondNumber.CompareTo(firstNumber) > 0) && (secondNumber.CompareTo(thirdNumber) > 0) ||
-                secondNumber.CompareTo(firstNumber) >= 0 && (secondNumber.CompareTo(thirdNumber) > 0) ||
-                secondNumber.CompareTo(firstNumber) > 0 && secondNumber.CompareTo(thirdNumber) >= 0)
-            {
-                return secondNumber;
-            }
+        public T firstValue, secondValue, thirdValue;
 
-           else if ((thirdNumber.CompareTo(firstNumber) > 0) && (thirdNumber.CompareTo(secondNumber) > 0) ||
-                thirdNumber.CompareTo(firstNumber) >= 0 && (thirdNumber.CompareTo(secondNumber) > 0) ||
-                thirdNumber.CompareTo(firstNumber) > 0 && thirdNumber.CompareTo(secondNumber) >= 0)
-            {
-                return thirdNumber;
-            }
-            else
-            return firstNumber;
-        }
-        public static double doubleMaximum(double firstNumber, double secondNumber, double thirdNumber)
+        public GenericsMaximum(T firstValue,T secondValue,T thirdValue)
         {
-            if ((firstNumber.CompareTo(secondNumber) > 0) && (firstNumber.CompareTo(thirdNumber) > 0) ||
-                firstNumber.CompareTo(secondNumber) >= 0 && (firstNumber.CompareTo(thirdNumber) > 0) ||
-                firstNumber.CompareTo(secondNumber) > 0 && firstNumber.CompareTo(thirdNumber) >= 0)
+            this.firstValue = firstValue;
+            this.secondValue = secondValue;
+            this.thirdValue = thirdValue;
+        }
+
+        public static T maxValue(T firstValue, T secondValue, T thirdValue)
+        {
+            if ((firstValue.CompareTo(secondValue) > 0) && (firstValue.CompareTo(thirdValue) > 0) ||
+                firstValue.CompareTo(secondValue) >= 0 && (firstValue.CompareTo(thirdValue) > 0) ||
+                firstValue.CompareTo(secondValue) > 0 && firstValue.CompareTo(thirdValue) >= 0)
             {
-                return firstNumber;                                                                        /*here in first return compare to method returns 1 if first number is greater than both
+                return firstValue;                                                                        /*here in first return compare to method returns 1 if first number is greater than both
                                                                                                             second and third which is compared with 0 and since 1 is greater than 0 first number will be-
                                                                                                              maximum or else if the first number is not greater then compare to will return -1 and
                                                                                                              since -1 is less than 0 condition will become false and it will be same for other*/
             }
 
-            else if ((secondNumber.CompareTo(firstNumber) > 0) && (secondNumber.CompareTo(thirdNumber) > 0) ||
-                secondNumber.CompareTo(firstNumber) >= 0 && (secondNumber.CompareTo(thirdNumber) > 0) ||
-                secondNumber.CompareTo(firstNumber) > 0 && secondNumber.CompareTo(thirdNumber) >= 0)
+            else if ((secondValue.CompareTo(firstValue) > 0) && (secondValue.CompareTo(thirdValue) > 0) ||
+                secondValue.CompareTo(firstValue) >= 0 && (secondValue.CompareTo(thirdValue) > 0) ||
+                secondValue.CompareTo(firstValue) > 0 && secondValue.CompareTo(thirdValue) >= 0)
             {
-                return secondNumber;
+                return secondValue;
             }
 
-            else if ((thirdNumber.CompareTo(firstNumber) > 0) && (thirdNumber.CompareTo(secondNumber) > 0) ||
-                 thirdNumber.CompareTo(firstNumber) >= 0 && (thirdNumber.CompareTo(secondNumber) > 0) ||
-                 thirdNumber.CompareTo(firstNumber) > 0 && thirdNumber.CompareTo(secondNumber) >= 0)
+            else if ((thirdValue.CompareTo(firstValue) > 0) && (thirdValue.CompareTo(secondValue) > 0) ||
+                 thirdValue.CompareTo(firstValue) >= 0 && (thirdValue.CompareTo(secondValue) > 0) ||
+                 thirdValue.CompareTo(firstValue) > 0 && thirdValue.CompareTo(secondValue) >= 0)
             {
-                return thirdNumber;
+                return thirdValue;
             }
             else
-                return firstNumber;
+                return firstValue;
         }
-        public static string stringMaximum(string firstString, string secondString, string thirdString)
+        public T maxMethod()
         {
-            if ((firstString.CompareTo(secondString) > 0) && (firstString.CompareTo(thirdString) > 0) ||
-                firstString.CompareTo(secondString) >= 0 && (firstString.CompareTo(thirdString) > 0) ||
-                firstString.CompareTo(secondString) > 0 && firstString.CompareTo(thirdString) >= 0)
-            {
-                return firstString;                                                                        /*here in first return compare to method returns 1 if first number is greater than both
-                                                                                                            second and third which is compared with 0 and since 1 is greater than 0 first number will be-
-                                                                                                             maximum or else if the first number is not greater then compare to will return -1 and
-                                                                                                             since -1 is less than 0 condition will become false and it will be same for other*/
-            }
-
-            else if ((secondString.CompareTo(firstString) > 0) && (secondString.CompareTo(thirdString) > 0) ||
-                secondString.CompareTo(firstString) >= 0 && (secondString.CompareTo(thirdString) > 0) ||
-                secondString.CompareTo(firstString) > 0 && secondString.CompareTo(thirdString) >= 0)
-            {
-                return secondString;
-            }
-
-            else if ((thirdString.CompareTo(firstString) > 0) && (thirdString.CompareTo(secondString) > 0) ||
-                 thirdString.CompareTo(firstString) >= 0 && (thirdString.CompareTo(secondString) > 0) ||
-                 thirdString.CompareTo(firstString) > 0 && thirdString.CompareTo(secondString) >= 0)
-            {
-                return thirdString;
-            }
-            else
-                return firstString;
+            T max = GenericsMaximum<T>.maxValue(this.firstValue, this.secondValue, this.thirdValue);
+            return max;
         }
+       
     }
 }
